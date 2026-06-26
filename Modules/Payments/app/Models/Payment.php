@@ -22,7 +22,7 @@ class Payment extends Model
 
     public const METHOD_PAYPAL = 'paypal';
 
-    public const METHOD_STRIPE = 'stripe';
+    public const METHOD_PAYMOB = 'paymob';
 
     protected $fillable = [
         'order_id',

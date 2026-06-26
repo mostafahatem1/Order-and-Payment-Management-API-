@@ -14,6 +14,7 @@ class ProcessPaymentRequest extends ApiRequest
             'payment_method' => ['required', 'string', Rule::in([
                 Payment::METHOD_CREDIT_CARD,
                 Payment::METHOD_PAYPAL,
+                Payment::METHOD_PAYMOB,
             ])],
             'gateway_data' => ['sometimes', 'array'],
         ];
