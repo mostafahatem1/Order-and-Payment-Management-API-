@@ -17,7 +17,7 @@ class UsersServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $configPath = __DIR__.'/../../config/config.php';
+        $configPath = __DIR__ . '/../../config/config.php';
 
         if (is_file($configPath)) {
             $this->mergeConfigFrom($configPath, 'users');
@@ -31,12 +31,12 @@ class UsersServiceProvider extends ServiceProvider
         $this->registerExceptionResponses();
         $this->registerRoutes();
 
-        $this->loadMigrationsFrom(__DIR__.'/../../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../../Database/Migrations');
     }
 
     private function registerRoutes(): void
     {
-        $routesPath = __DIR__.'/../../routes/api.php';
+        $routesPath = __DIR__ . '/../../routes/api.php';
 
         if (is_file($routesPath)) {
             Route::middleware('api')
@@ -63,7 +63,7 @@ class UsersServiceProvider extends ServiceProvider
         $handler = $this->app->make(ExceptionHandler::class);
 
         $handler->renderable(function (AuthenticationException $exception, Request $request): ?JsonResponse {
-            if (! $request->is('api/v1/auth/*')) {
+            if (! $request->is('api/v1/*')) {
                 return null;
             }
 
@@ -71,7 +71,7 @@ class UsersServiceProvider extends ServiceProvider
         });
 
         $handler->renderable(function (JWTException $exception, Request $request): ?JsonResponse {
-            if (! $request->is('api/v1/auth/*')) {
+            if (! $request->is('api/v1/*')) {
                 return null;
             }
 
