@@ -63,7 +63,7 @@ class UsersServiceProvider extends ServiceProvider
         $handler = $this->app->make(ExceptionHandler::class);
 
         $handler->renderable(function (AuthenticationException $exception, Request $request): ?JsonResponse {
-            if (! $request->is('api/auth/*')) {
+            if (! $request->is('api/v1/auth/*')) {
                 return null;
             }
 
@@ -71,7 +71,7 @@ class UsersServiceProvider extends ServiceProvider
         });
 
         $handler->renderable(function (JWTException $exception, Request $request): ?JsonResponse {
-            if (! $request->is('api/auth/*')) {
+            if (! $request->is('api/v1/auth/*')) {
                 return null;
             }
 

@@ -12,6 +12,18 @@ class Payment extends Model
 {
     use HasFactory;
 
+    public const STATUS_PENDING = 'pending';
+
+    public const STATUS_SUCCESSFUL = 'successful';
+
+    public const STATUS_FAILED = 'failed';
+
+    public const METHOD_CREDIT_CARD = 'credit_card';
+
+    public const METHOD_PAYPAL = 'paypal';
+
+    public const METHOD_STRIPE = 'stripe';
+
     protected $fillable = [
         'order_id',
         'user_id',
