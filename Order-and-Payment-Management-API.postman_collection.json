@@ -1,0 +1,535 @@
+{
+  "info": {
+    "_postman_id": "fc7a549e-9cb9-4513-bdd4-1822710fc599",
+    "name": "Order-and-Payment-Management-API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26152350"
+  },
+  "item": [
+    {
+      "name": "Endpoints",
+      "item": [
+        {
+          "name": "Auth",
+          "item": [
+            {
+              "name": "POST api/v1/auth/register",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"email\":\"kunde.eloisa@example.com\",\"password\":\"O[2UZ5ij-e\\/dl4m{o,\"}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "POST api/v1/auth/login",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"email\":\"qkunze@example.com\",\"password\":\"O[2UZ5ij-e\\/dl4m{o,\"}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "POST api/v1/auth/logout",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/logout",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "GET api/v1/auth/me",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/auth/me",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "me"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "response",
+                  "originalRequest": {
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/auth/me",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "auth",
+                        "me"
+                      ]
+                    }
+                  },
+                  "code": 401,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\"success\":false,\"message\":\"Unauthenticated.\",\"errors\":{\"token\":[\"Invalid or missing authentication token.\"]}}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Order",
+          "item": [
+            {
+              "name": "GET api/v1/orders",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/orders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "response",
+                  "originalRequest": {
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/orders",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "orders"
+                      ]
+                    }
+                  },
+                  "code": 401,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\"message\":\"Unauthenticated.\"}"
+                }
+              ]
+            },
+            {
+              "name": "POST api/v1/orders",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"items\":[{\"product_name\":\"vmqeopfuudtdsufvyvddq\",\"quantity\":2,\"price\":45}]}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/orders",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "PUT api/v1/orders/{id}",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"status\":\"pending\",\"total_amount\":73}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/orders/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "consequatur",
+                      "description": "The ID of the order."
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "DELETE api/v1/orders/{id}",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/orders/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "consequatur",
+                      "description": "The ID of the order."
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Payment",
+          "item": [
+            {
+              "name": "GET api/v1/payments",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/payments",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "payments"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "response",
+                  "originalRequest": {
+                    "auth": {
+                      "type": "noauth"
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/api/v1/payments",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "payments"
+                      ]
+                    }
+                  },
+                  "code": 401,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "cache-control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "access-control-allow-origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\"message\":\"Unauthenticated.\"}"
+                }
+              ]
+            },
+            {
+              "name": "POST api/v1/payments/process",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"order_id\":17,\"payment_method\":\"paypal\"}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/api/v1/payments/process",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "payments",
+                    "process"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost"
+    }
+  ]
+}
